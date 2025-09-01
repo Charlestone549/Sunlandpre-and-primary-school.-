@@ -1,0 +1,191 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUNLAND PRE AND PRIMARY SCHOOL</title>
+<style>
+body{font-family:'Segoe UI',sans-serif;margin:0;padding:0;background:#eef2f7;}
+header{background:#130dda;color:white;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+.brand .title{font-size:20px;font-weight:bold;}
+.brand .subtitle{font-size:14px;color:#f17ddf;}
+.menu-btn{font-size:28px;cursor:pointer;transition:0.3s;}
+.menu-btn:hover{color:#ffd700;}
+nav#sideMenu{height:100%;width:0;position:fixed;top:0;left:0;background:#8603b3;overflow-x:hidden;transition:0.5s;padding-top:60px;z-index:1001;}
+nav#sideMenu a{padding:12px 10px 12px 32px;text-decoration:none;font-size:16px;color:#ffffff;display:flex;align-items:center;transition:0.3s;}
+nav#sideMenu a:hover{background:#d30909;color:#fff;border-radius:8px;}
+nav#sideMenu .icon{margin-right:10px;}
+nav#sideMenu .close-btn{position:absolute;top:0;right:25px;font-size:36px;}
+.main{margin:20px;}
+.card{background:#fff;padding:20px;margin-bottom:20px;border-radius:12px;box-shadow:0 3px 8px rgba(0,0,0,0.2);}
+button{padding:8px 16px;margin-top:10px;cursor:pointer;background:#2a3eb1;color:white;border:none;border-radius:6px;box-shadow:0 2px 4px rgba(0,0,0,0.2);transition:0.3s;}
+button:hover{background:#d309b5;}
+table{width:100%;border-collapse:collapse;margin-top:10px;}
+th,td{border:1px solid #555;padding:6px;text-align:center;}
+th{background:#2a3eb1;color:white;}
+@media screen and (max-width:768px){
+  th,td{font-size:12px;padding:4px;}
+  .brand .title{font-size:16px;}
+  .brand .subtitle{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="title">SUNLAND PRE AND PRIMARY SCHOOL.____</span>
+  <span class="subtitle">Education Lighten The Future</span>
+  </div>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
+</header>
+
+<nav id="sideMenu">
+  <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">×</a>
+  <a href="#home" onclick="showSection('home')"><span class="icon">🏠</span>Home</a>
+  <a href="#about" onclick="showSection('about')"><span class="icon">📖</span>About Us</a>
+  <a href="#contacts" onclick="showSection('contacts')"><span class="icon">📞</span>Contacts</a>
+  <a href="#motto" onclick="showSection('motto')"><span class="icon">💡</span>Our Motto</a>
+  <a href="#mission" onclick="showSection('mission')"><span class="icon">🎯</span>Our Mission</a>
+  <a href="#results" onclick="showSection('results')"><span class="icon">📝</span>Results</a>
+  <a href="#info" onclick="showSection('info')"><span class="icon">ℹ️</span>Information</a>
+</nav>
+
+<div class="main">
+
+  <div id="home" class="card section">
+    <h3>WELCOME TO SUNLAND PRE AND PRIMARY SCHOOL</h3>
+    <p>Education Lighten The Future. Explore our website using the menu.</p>
+  </div>
+
+  <div id="about" class="card section" style="display:none;">
+    <h1>About Us</h1>
+    <p>SUNLAND PRE AND PRIMARY SCHOOL is committed to delivering quality education that develops knowledge, skills, and values in our students.</p>
+  </div>
+
+  <div id="contacts" class="card section" style="display:none;">
+    <h1>Contacts</h1>
+    <p>Phone: —</p>
+    <p>Email: —</p>
+    <p>Address: —</p>
+  </div>
+
+  <div id="motto" class="card section" style="display:none;">
+    <h1>Our Motto</h1>
+    <p><strong>Education Lighten The Future</strong></p>
+  </div>
+
+  <div id="mission" class="card section" style="display:none;">
+    <h1>Our Mission</h1>
+    <ul>
+      <li>Provide high-quality education building knowledge, skills, and character.</li>
+      <li>Foster critical thinking and creativity.</li>
+      <li>Promote values like respect, integrity, and responsibility.</li>
+      <li>Empower students to achieve full potential academically, socially, and spiritually.</li>
+    </ul>
+  </div>
+
+  <div id="results" class="card section" style="display:none;">
+    <h1>Results Entry (Std I–VI)</h1>
+    <table id="resultsTable">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Math</th>
+          <th>Science</th>
+          <th>Kiswahili</th>
+          <th>English</th>
+          <th>Sports & Arts</th>
+          <th>Geography</th>
+          <th>Historia & Maadili</th>
+          <th>Total</th>
+          <th>Average</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+        for(let i=1;i<=30;i++){
+          document.write('<tr>');
+          document.write('<td contenteditable="true">Student '+i+'</td>');
+          for(let j=0;j<7;j++){document.write('<td contenteditable="true">0</td>');}
+          document.write('<td></td><td></td><td></td>');
+          document.write('</tr>');
+        }
+        </script>
+      </tbody>
+    </table>
+    <button onclick="calculateAndSort()">Calculate & Sort</button>
+    <button onclick="downloadCSV()">Download CSV</button>
+  </div>
+
+  <div id="info" class="card section" style="display:none;">
+    <h1>Information</h1>
+    <ul>
+      <li>School Address: —P.O.BOX 36314_ Mwasonga - Kigamboni Dsm</li>
+      <li>Phone: — 0688794711 / 0717032811</li>
+      <li>Email: — sunlandschool0@gmail.com</li>
+      <li>Office Hours: 8:00 AM - 3:30 PM</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer style="text-align:center;padding:12px;background:#ddd;">© 2025 SUNLAND PRE AND PRIMARY SCHOOL — Education Lighten The Future</footer>
+
+<script>
+function openMenu(){document.getElementById("sideMenu").style.width="250px";}
+function closeMenu(){document.getElementById("sideMenu").style.width="0";}
+function showSection(id){
+  closeMenu();
+  document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+
+// Results calculation
+function calculateAndSort(){
+  const table = document.getElementById('resultsTable').getElementsByTagName('tbody')[0];
+  let rowsArray = Array.from(table.rows);
+
+  rowsArray.forEach(row=>{
+    let subjects = [];
+    for(let i=1;i<=7;i++){subjects.push(parseFloat(row.cells[i].innerText)||0);}
+    let total = subjects.reduce((a,b)=>a+b,0);
+    let avg = total / subjects.length;
+    let grade='';
+    if(avg>=80) grade='A';
+    else if(avg>=70) grade='B';
+    else if(avg>=60) grade='C';
+    else if(avg>=50) grade='D';
+    else grade='F';
+    row.cells[8].innerText = total;
+    row.cells[9].innerText = avg.toFixed(2);
+    row.cells[10].innerText = grade;
+    row.dataset.avg = avg;
+  });
+
+  rowsArray.sort((a,b)=> b.dataset.avg - a.dataset.avg);
+  rowsArray.forEach(row=> table.appendChild(row));
+}
+
+// Download CSV
+function downloadCSV(){
+  const table = document.getElementById('resultsTable');
+  let csv = [];
+  for(let i=0;i<table.rows.length;i++){
+    let row = [], cols = table.rows[i].cells;
+    for(let j=0;j<cols.length;j++){row.push(cols[j].innerText);}
+    csv.push(row.join(","));
+  }
+  let csvFile = new Blob([csv.join("\n")], {type:"text/csv"});
+  let downloadLink = document.createElement("a");
+  downloadLink.download = "results.csv";
+  downloadLink.href = window.URL.createObjectURL(csvFile);
+  downloadLink.style.display="none";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+}
+</script>
+
+</body>
+</html>
